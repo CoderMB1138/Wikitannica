@@ -8,6 +8,7 @@ import Article from './components/Article';
 import Sidebar from './components/Sidebar';
 import Modal from 'react-modal';
 import { signOut } from "firebase/auth";
+import './index.css'; // Ensure this is imported
 
 const App = () => {
   const [user, loading, error] = useAuthState(auth); // Use react-firebase-hooks to manage auth state
@@ -59,18 +60,22 @@ const App = () => {
           closeModal={() => setAuthModalIsOpen(false)} 
         />
       ) : (
-        <div>
+        <>
           <header>
             <button onClick={openNewArticleModal}>New Article</button>
             <button onClick={handleLogout}>Logout</button>
           </header>
-          <Sidebar setArticleId={setArticleId} />
-          {articleId && <Article articleId={articleId} />}
+          <div style={{ display: 'flex', height: 'calc(100vh - 50px)' }}>
+            <Sidebar setArticleId={setArticleId} />
+            <div className="main-content">
+              {articleId ? <Article articleId={articleId} /> : <p>Select an article to read</p>}
+            </div>
+          </div>
           <NewArticleModal
             modalIsOpen={newArticleModalIsOpen}
             closeModal={closeNewArticleModal}
           />
-        </div>
+        </>
       )}
     </div>
   );

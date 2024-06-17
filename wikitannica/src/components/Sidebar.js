@@ -25,7 +25,7 @@ const Sidebar = ({ setArticleId }) => {
   );
 
   return (
-    <div>
+    <div className="sidebar">
       <h2>Articles</h2>
       <input
         type="text"
@@ -47,3 +47,4 @@ const Sidebar = ({ setArticleId }) => {
 };
 
 export default Sidebar;
+

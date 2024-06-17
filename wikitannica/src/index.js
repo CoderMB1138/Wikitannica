@@ -2,7 +2,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './index.css'; // Optional: import your global styles
+import Modal from 'react-modal';
+import './index.css';
+
+Modal.setAppElement('#root');
 
 ReactDOM.render(
   <React.StrictMode>
