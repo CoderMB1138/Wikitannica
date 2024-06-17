@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Article</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #666;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Test Article</h1>
+    <h2>1. Connect to CyberGhost VPN</h2>
+    <pre><code>sudo cyberghostvpn --connect --country-code LT</code></pre>
+    <h2>2. Install .deb Package</h2>
+    <pre><code>sudo dpkg -i /item</code></pre>
+    <h2>3. Get Rid of Screenshot Sound</h2>
+    <pre><code>sudo mv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga /usr/share/sounds/freedesktop/stereo/camera-shutter-disabled.oga</code></pre>
+    <p>More details can be found on <a
+            href="https://askubuntu.com/questions/140200/how-do-i-disable-the-screenshot-sound" target="_blank">Ask
+            Ubuntu</a>.</p>
+    <h2>4. Restore a Git Repository</h2>
+    <pre><code>git reset --hard origin/branch</code></pre>
+    <h2>5. Merge File with rsync</h2>
+    <pre><code>rsync -av z1/ z2/ ---puts z1 contents into z2</code></pre>
+    <h2>6. Get Rid of Terminal Username</h2>
+    <pre><code>nano ~/.bashrc</code></pre>
+    <p>Add the following line:</p>
+    <pre><code>export PS1="\W \$"</code></pre>
+    <p>Then press <code>Ctrl + X</code> followed by <code>Y</code> to save and exit.</p>
+    <h2>7. Find All Directories with Less Than 50 Files</h2>
+    <pre><code>find . -type d | while read dir; do [ $(find "$dir" -mindepth 1 -maxdepth 1 -type f | wc -l) -lt 50 ] && echo "$dir"; done</code></pre>
+</body>
+
+</html>
