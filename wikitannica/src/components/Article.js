@@ -1,6 +1,5 @@
-// Article.js
 import React, { useEffect, useState } from 'react';
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase'; // Adjust the import path as necessary
 
 const Article = ({ articleId }) => {
@@ -14,7 +13,7 @@ const Article = ({ articleId }) => {
       if (docSnap.exists()) {
         setArticle(docSnap.data());
       } else {
-        console.log("No such document!");
+        console.log('No such document!');
       }
     };
 
@@ -25,13 +24,23 @@ const Article = ({ articleId }) => {
     return <div>Loading...</div>;
   }
 
+  const renderContent = (content) => {
+    return <div dangerouslySetInnerHTML={{ __html: content }} />;
+  };
+
   return (
     <div>
       <h1>{article.title}</h1>
       <p>{article.date}</p>
-      <div>{article.content}</div>
+      {article.imageUrl && (
+        <img src={article.imageUrl} alt="Article" style={{ maxWidth: '100%' }} />
+      )}
+      {renderContent(article.content)}
     </div>
   );
 };
 
 export default Article;
+
+
+
